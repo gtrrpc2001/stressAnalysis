@@ -1,0 +1,9 @@
+services:
+  analysis:
+    container_name: analysis_server
+    image: analysis_server:latest
+    volumes:
+      - ../backup_data.json:/app/analysis/backup_data.json
+      - ../cloud_data.json:/app/analysis/cloud_data.json
+      - ./logFile.txt:/app/analysis/logFile.txt
+    restart: unless-stopped
